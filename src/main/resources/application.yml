@@ -4,7 +4,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    health-check-url-path: ${management.context-path}/health
+    health-check-url-path: /health
     metadata-map:
       instance-id: test-sidecar
       management:
@@ -13,11 +13,11 @@ eureka:
         name: test
         password: test
     prefer-ip-address: true
-    status-page-url-path: ${management.context-path}/info
+    status-page-url-path: /info
 management:
   context-path: /admin
 server:
-  port: 22520
+  port: 0
   tomcat:
     uri-encoding: UTF-8
   compression:
